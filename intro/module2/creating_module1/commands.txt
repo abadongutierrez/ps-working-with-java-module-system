@@ -1,0 +1,3 @@
+javac -d out src/com/javamodularity/greeter/Main.java src/module-info.java
+
+java -p out -m greeter/com.javamodularity.greeter.Main

@@ -1,0 +1,10 @@
+
+// Compiling using module folders
+// -d out -> output directory
+// --module-source-path -> folder with the module folders
+// -m -> which module to compile
+javac -d out --module-source-path src -m greeter
+
+// -p || --module-path -> module path
+// -m -> {module}/{main class}
+java -p out -m greeter/com.javamodularity.greeter.Main
