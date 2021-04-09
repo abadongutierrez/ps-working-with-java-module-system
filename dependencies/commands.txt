@@ -1,0 +1,19 @@
+javac -d out --module-source-path src -m greeter.cli,greeter.hello
+
+// This also works because Java compiler knows the dependencies between modules and the module graph
+javac -d out --module-source-path src -m greeter.cli
+
+java -p out -m greeter.cli/greeter.cli.Main
+
+// Try deleting out/greeter.hello and run again
+$ java -p out -m greeter.cli/greeter.cli.Main                                                                                                                              [21:33:28]
+java.lang.module.FindException: Module greeter.hello not found, required by greeter.cli
+        at java.base/java.lang.module.Resolver.findFail(Resolver.java:877)
+        at java.base/java.lang.module.Resolver.resolve(Resolver.java:191)
+        at java.base/java.lang.module.Resolver.resolve(Resolver.java:140)
+        at java.base/java.lang.module.Configuration.resolveAndBind(Configuration.java:315)
+        at java.base/java.lang.module.ModuleDescriptor$1.resolveAndBind(ModuleDescriptor.java:2693)
+        at java.base/jdk.internal.module.ModuleBootstrap.boot(ModuleBootstrap.java:354)
+        at java.base/java.lang.ClassLoader.initializeClassLoaders(ClassLoader.java:211)
+        at java.base/java.lang.Thread.initialize(Thread.java:430)
+        at java.base/java.lang.Thread.<init>(Thread.java:155)
