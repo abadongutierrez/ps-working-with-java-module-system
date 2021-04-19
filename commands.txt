@@ -1,0 +1,7 @@
+// to list modules of the JDK
+java --list-modules
+
+// to see the description of an specific module
+java --describe-module java.sql
+
+java --show-module-resolution -p out -m mymodule
